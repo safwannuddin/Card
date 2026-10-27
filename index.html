@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Safwan Uddin Mohammed</title>
+<meta name="description" content="Safwan Uddin Mohammed: MSc Applied AI student building AI systems. Email, LinkedIn and GitHub.">
+<meta property="og:title" content="Safwan Uddin Mohammed">
+<meta property="og:description" content="MSc Applied AI student building AI systems.">
+<meta property="og:type" content="profile">
+<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1218" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a46c9'/%3E%3Ctext x='16' y='21.5' font-family='Arial' font-weight='700' font-size='14' fill='white' text-anchor='middle'%3ESU%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: one narrow column, a business card you hold in one hand. Name first, then one tap per contact route. */
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --ink: #121722;
+    --muted: #5b6475;
+    --line: #dfe3ea;
+    --accent: #2a46c9;
+    --accent-ink: #ffffff;
+    --ok: #1d7a4d;
+    --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1218;
+      --card: #171b23;
+      --ink: #eef1f6;
+      --muted: #9aa3b4;
+      --line: #2a303c;
+      --accent: #8fa3ff;
+      --accent-ink: #0f1218;
+      --ok: #5fd39a;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 var(--display);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+    display: grid;
+    place-items: start center;
+    padding-block: calc(40px + env(safe-area-inset-top, 0px)) calc(32px + env(safe-area-inset-bottom, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { width: 100%; max-width: 420px; display: grid; gap: 28px; }
+
+  .who { display: grid; gap: 14px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--accent); color: var(--accent-ink);
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 20px; letter-spacing: 0.02em;
+  }
+  h1 { margin: 0; font-size: 32px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+  .role { margin: 0; color: var(--muted); font-size: 17px; }
+  .status {
+    justify-self: start;
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 500 12px/1 var(--mono); letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--ink); padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+  }
+  .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+
+  .routes { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .route {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px;
+    padding: 14px 16px; min-height: 64px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    color: inherit; text-decoration: none;
+    transition: border-color .15s ease;
+  }
+  a.route:hover { border-color: var(--accent); }
+  a.route:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .route .label { font: 500 11px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .route .value { display: block; margin-top: 6px; font-size: 16px; font-weight: 500; min-width: 0; overflow-wrap: anywhere; }
+  .route .go { color: var(--muted); font-size: 18px; }
+
+  .email { padding-right: 10px; }
+  .email-text { min-width: 0; }
+  .email-text a { color: inherit; text-decoration: none; }
+  .copy {
+    font: 500 13px/1 var(--display); color: var(--accent);
+    background: transparent; border: 1px solid var(--line); border-radius: 8px;
+    padding: 9px 12px; cursor: pointer; min-width: 70px;
+  }
+
+  .save {
+    width: 100%; min-height: 52px; border: 0; border-radius: 12px; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink);
+    font: 700 16px/1 var(--display);
+  }
+  .save-note { margin: 8px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
+
+  footer { color: var(--muted); font: 400 12px/1.5 var(--mono); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <section class="who" aria-label="About">
+    <div class="mark" aria-hidden="true">SU</div>
+    <h1>Safwan Uddin Mohammed</h1>
+    <p class="role">MSc Applied AI student. I build AI systems, from the model to the product.</p>
+  </section>
+
+  <ul class="routes">
+    <li class="route email">
+      <div class="email-text">
+        <span class="label">Email</span>
+        <a class="value" id="email" href="mailto:safwanuddin.work@gmail.com">safwanuddin.work@gmail.com</a>
+      </div>
+      <button class="copy" id="copy" type="button">Copy</button>
+    </li>
+    <li>
+      <a class="route" href="https://www.linkedin.com/in/mohd-safwan-uddin-299602257/" target="_blank" rel="noopener">
+        <span><span class="label">LinkedIn</span><span class="value">Safwan Uddin Mohammed</span></span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    <li>
+      <a class="route" href="https://github.com/safwannuddin" target="_blank" rel="noopener">
+        <span><span class="label">GitHub</span><span class="value">safwannuddin</span></span>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+    </li>
+  </ul>
+
+  <div>
+    <button class="save" id="save" type="button">Save to contacts</button>
+    <p class="save-note">Adds my name, email and links to your phone.</p>
+  </div>
+
+  <footer>United Kingdom</footer>
+</main>
+
+<script>
+  const EMAIL = "safwanuddin.work@gmail.com";
+
+  const copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      copyBtn.textContent = "Copied";
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById("email"));
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      copyBtn.textContent = "Selected";
+    }
+    setTimeout(() => (copyBtn.textContent = "Copy"), 2000);
+  });
+
+  document.getElementById("save").addEventListener("click", () => {
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Mohammed;Safwan Uddin;;;",
+      "FN:Safwan Uddin Mohammed",
+      "TITLE:MSc Applied AI student",
+      "EMAIL;TYPE=INTERNET:" + EMAIL,
+      "URL;TYPE=LinkedIn:https://www.linkedin.com/in/mohd-safwan-uddin-299602257/",
+      "URL;TYPE=GitHub:https://github.com/safwannuddin",
+      "END:VCARD"
+    ].join("\r\n");
+    const url = URL.createObjectURL(new Blob([vcard], { type: "text/vcard" }));
+    const a = document.createElement("a");
+    a.href = url; a.download = "Safwan-Uddin.vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+</script>
+</body>
+</html>
