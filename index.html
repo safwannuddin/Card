@@ -126,13 +126,18 @@
   .text { min-width: 0; }
   .label { display: block; font-size: 13px; color: var(--muted); line-height: 1.2; }
   .value { display: block; font-size: 15px; font-weight: 600; line-height: 1.35; overflow-wrap: anywhere; }
-  .value a { color: inherit; text-decoration: none; }
+  .value a { color: inherit; text-decoration: none; overflow-wrap: normal; word-break: normal; }
   .arrow { color: var(--muted); width: 18px; height: 18px; }
 
   .copy {
     font: 600 13px/1 var(--font); color: var(--accent);
     background: transparent; border: 1px solid var(--line); border-radius: 8px;
     padding: 9px 12px; min-width: 72px; cursor: pointer;
+  }
+  @media (max-width: 400px) {
+    .body { padding: 0 20px 20px; }
+    .row { gap: 12px; padding: 12px; }
+    .copy { min-width: 0; padding: 9px 10px; }
   }
   .copy:hover { border-color: var(--accent); }
 
@@ -183,7 +188,7 @@
           </span>
           <span class="text">
             <span class="label">Email</span>
-            <span class="value"><a id="email" href="mailto:safwanuddin.work@gmail.com">safwanuddin.work@gmail.com</a></span>
+            <span class="value"><a id="email" href="mailto:safwanuddin.work@gmail.com">safwanuddin.work<wbr>@gmail.com</a></span>
           </span>
           <button class="copy" id="copy" type="button">Copy</button>
         </div>
